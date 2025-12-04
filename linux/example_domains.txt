@@ -1,0 +1,22 @@
+# Example Domains List for SSL Certificate Monitoring
+# One domain per line, comments start with #
+
+# Healthcare Examples
+patient-portal.example.com
+ehr-system.example.com:8443
+telehealth.example.com
+
+# E-commerce Examples
+checkout.example.com
+api.example.com
+gateway.example.com
+
+# Critical Infrastructure Examples
+scada-hmi.example.com
+control-system.example.com:9443
+monitoring.example.com
+
+# General Web Services
+example.com
+mail.example.com:587
+www.example.com
