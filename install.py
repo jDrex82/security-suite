@@ -168,8 +168,13 @@ Installation directories:
                 
             # Set directory permissions
             os.chmod(self.install_dir, 0o755)
-            os.chmod(self.log_dir, 0o755)
-            os.chmod(self.data_dir, 0o755)
+            os.chmod(self.log_dir, 0o777)  # Allow all users to write logs
+            os.chmod(self.data_dir, 0o777)  # Allow all users to write data
+            
+            # Make subdirectories writable too
+            for subdir in self.data_dir.rglob("*"):
+                if subdir.is_dir():
+                    os.chmod(subdir, 0o777)
             
             print("[+] Permissions set")
             return True
@@ -249,11 +254,20 @@ Installation directories:
 INSTALL_DIR="{self.install_dir}"
 LOG_DIR="{self.log_dir}"
 DATA_DIR="{self.data_dir}"
+REPORTS_DIR="$DATA_DIR/reports"
 
 echo "========================================"
 echo "  Security Suite - Running All Tools"
 echo "========================================"
 echo ""
+
+# Ensure directories are writable
+chmod 777 "$LOG_DIR" 2>/dev/null || true
+chmod 777 "$DATA_DIR" 2>/dev/null || true
+chmod 777 "$REPORTS_DIR" 2>/dev/null || true
+
+# Change to reports directory so JSON files go here
+cd "$REPORTS_DIR" || exit 1
 
 # Run v4.1 tools
 echo "[*] Running v4.1 traditional security monitors..."
@@ -272,7 +286,10 @@ done
 echo ""
 echo "[+] All tools completed"
 echo "[*] Check logs: $LOG_DIR"
-echo "[*] Check reports: $DATA_DIR/reports"
+echo "[*] Check reports: $REPORTS_DIR"
+echo ""
+echo "Latest reports:"
+ls -lht "$REPORTS_DIR"/*.json 2>/dev/null | head -5 || echo "  No reports yet"
 """
         
         launcher_file = self.install_dir / "run_all_tools.sh"
