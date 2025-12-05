@@ -1,0 +1,38 @@
+2025-12-05 20:46:50,453 [INFO] Directory ready: /var/lib/security_suite/pcap
+2025-12-05 20:46:50,454 [INFO] Directory ready: /var/lib/security_suite/alerts
+2025-12-05 20:46:50,454 [INFO] Directory ready: /var/log/security_suite
+2025-12-05 20:46:50,454 [INFO] Directory ready: /var/lib/security_suite/models
+2025-12-05 20:46:50,455 [INFO] ================================================================================
+2025-12-05 20:46:50,455 [INFO] Security Suite Orchestrator v5.0 - Starting
+2025-12-05 20:46:50,455 [INFO] ================================================================================
+2025-12-05 20:46:50,456 [INFO] Starting network capture...
+2025-12-05 20:46:50,457 [INFO] Capture started (PID: 7)
+2025-12-05 20:46:50,458 [INFO] Interface: eth0
+2025-12-05 20:46:50,458 [INFO] Filter: port 22 or port 3389 or port 80 or port 443 or port 389 or port 636 or port 445
+2025-12-05 20:46:50,459 [INFO] Starting PCAP processing thread...
+2025-12-05 20:46:50,459 [INFO] Started thread: PCAP-Processor
+2025-12-05 20:46:50,459 [INFO] Starting alert handler thread...
+2025-12-05 20:46:50,460 [INFO] Started thread: Alert-Handler
+2025-12-05 20:46:50,460 [INFO] Starting health check thread...
+2025-12-05 20:46:50,460 [INFO] Started thread: Health-Monitor
+2025-12-05 20:46:50,461 [INFO] ================================================================================
+2025-12-05 20:46:50,461 [INFO] DAEMON RUNNING - Press Ctrl+C to stop
+2025-12-05 20:46:50,461 [INFO] ================================================================================
+2025-12-05 20:46:50,462 [INFO] Health: 0 PCAP files, 0 queued alerts
+2025-12-05 20:47:48,856 [INFO] Processing: capture_20251205_204650.pcap
+2025-12-05 20:47:48,911 [INFO] Health: 1 PCAP files, 0 queued alerts
+2025-12-05 20:48:45,354 [INFO] Health: 1 PCAP files, 0 queued alerts
+2025-12-05 20:49:42,195 [INFO] Health: 1 PCAP files, 0 queued alerts
+2025-12-05 20:50:39,153 [INFO] Health: 1 PCAP files, 0 queued alerts
+2025-12-05 20:51:35,815 [INFO] Health: 1 PCAP files, 0 queued alerts
+2025-12-05 20:52:34,561 [INFO] Health: 1 PCAP files, 0 queued alerts
+2025-12-05 20:53:31,464 [INFO] Health: 1 PCAP files, 0 queued alerts
+2025-12-05 20:54:21,051 [INFO] ================================================================================
+2025-12-05 20:54:21,052 [INFO] Security Suite Orchestrator - Stopping
+2025-12-05 20:54:21,052 [INFO] ================================================================================
+2025-12-05 20:54:21,052 [INFO] Stopping network capture...
+2025-12-05 20:54:21,171 [INFO] Capture stopped
+2025-12-05 20:54:21,172 [INFO] Waiting for thread: PCAP-Processor
+2025-12-05 20:54:26,174 [INFO] Waiting for thread: Alert-Handler
+2025-12-05 20:54:26,175 [INFO] Waiting for thread: Health-Monitor
+2025-12-05 20:54:28,319 [INFO] Daemon stopped

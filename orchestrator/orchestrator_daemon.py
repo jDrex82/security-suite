@@ -26,7 +26,7 @@ from queue import Queue
 
 # Configuration
 CONFIG = {
-    'capture_interface': 'eth1',  # SPAN port interface
+    'capture_interface': 'eth0',  # SPAN port interface
     'capture_filter': 'port 22 or port 3389 or port 80 or port 443 or port 389 or port 636 or port 445',
     'pcap_dir': '/var/lib/security_suite/pcap',
     'alerts_dir': '/var/lib/security_suite/alerts',
