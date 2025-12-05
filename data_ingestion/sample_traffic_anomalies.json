@@ -1,0 +1,220 @@
+{
+  "tool": "Login Anomaly Detector - PCAP Mode",
+  "version": "5.0",
+  "pcap_source": "sample_traffic.pcap",
+  "scan_time": "2025-12-05T12:10:03.798452",
+  "total_alerts": 12,
+  "alerts": [
+    {
+      "timestamp": "2025-12-05T11:39:24.043406",
+      "severity": "CRITICAL",
+      "user": "user_198_51_100_25",
+      "source_ip": "198.51.100.25",
+      "destination_ip": "192.168.1.10",
+      "location": "External (198.51.100.25)",
+      "protocol": "SSH",
+      "anomaly_score": 0.767,
+      "ml_confidence": "76.7%",
+      "behavioral_anomalies": [
+        "External IP detected: External (198.51.100.25)",
+        "Multiple failed attempts: 9",
+        "Automated attack pattern: 0.6 minutes between attempts"
+      ],
+      "failed_attempts": 9,
+      "recommended_action": "Investigate immediately - possible account compromise"
+    },
+    {
+      "timestamp": "2025-12-05T11:39:26.033406",
+      "severity": "HIGH",
+      "user": "user_192_168_1_10",
+      "source_ip": "192.168.1.10",
+      "destination_ip": "198.51.100.25",
+      "location": "Internal Network",
+      "protocol": "SSH",
+      "anomaly_score": 0.607,
+      "ml_confidence": "60.7%",
+      "behavioral_anomalies": [
+        "Multiple failed attempts: 10",
+        "Automated attack pattern: 0.6 minutes between attempts"
+      ],
+      "failed_attempts": 10,
+      "recommended_action": "Investigate immediately - possible account compromise"
+    },
+    {
+      "timestamp": "2025-12-05T11:39:26.043406",
+      "severity": "CRITICAL",
+      "user": "user_198_51_100_25",
+      "source_ip": "198.51.100.25",
+      "destination_ip": "192.168.1.10",
+      "location": "External (198.51.100.25)",
+      "protocol": "SSH",
+      "anomaly_score": 0.771,
+      "ml_confidence": "77.1%",
+      "behavioral_anomalies": [
+        "External IP detected: External (198.51.100.25)",
+        "Multiple failed attempts: 10",
+        "Automated attack pattern: 0.6 minutes between attempts"
+      ],
+      "failed_attempts": 10,
+      "recommended_action": "Investigate immediately - possible account compromise"
+    },
+    {
+      "timestamp": "2025-12-05T11:39:28.033406",
+      "severity": "HIGH",
+      "user": "user_192_168_1_10",
+      "source_ip": "192.168.1.10",
+      "destination_ip": "198.51.100.25",
+      "location": "Internal Network",
+      "protocol": "SSH",
+      "anomaly_score": 0.607,
+      "ml_confidence": "60.7%",
+      "behavioral_anomalies": [
+        "Multiple failed attempts: 10",
+        "Automated attack pattern: 0.6 minutes between attempts"
+      ],
+      "failed_attempts": 10,
+      "recommended_action": "Investigate immediately - possible account compromise"
+    },
+    {
+      "timestamp": "2025-12-05T11:39:28.043406",
+      "severity": "CRITICAL",
+      "user": "user_198_51_100_25",
+      "source_ip": "198.51.100.25",
+      "destination_ip": "192.168.1.10",
+      "location": "External (198.51.100.25)",
+      "protocol": "SSH",
+      "anomaly_score": 0.771,
+      "ml_confidence": "77.1%",
+      "behavioral_anomalies": [
+        "External IP detected: External (198.51.100.25)",
+        "Multiple failed attempts: 10",
+        "Automated attack pattern: 0.6 minutes between attempts"
+      ],
+      "failed_attempts": 10,
+      "recommended_action": "Investigate immediately - possible account compromise"
+    },
+    {
+      "timestamp": "2025-12-05T11:39:30.033406",
+      "severity": "HIGH",
+      "user": "user_192_168_1_10",
+      "source_ip": "192.168.1.10",
+      "destination_ip": "198.51.100.25",
+      "location": "Internal Network",
+      "protocol": "SSH",
+      "anomaly_score": 0.607,
+      "ml_confidence": "60.7%",
+      "behavioral_anomalies": [
+        "Multiple failed attempts: 10",
+        "Automated attack pattern: 0.6 minutes between attempts"
+      ],
+      "failed_attempts": 10,
+      "recommended_action": "Investigate immediately - possible account compromise"
+    },
+    {
+      "timestamp": "2025-12-05T11:39:30.043406",
+      "severity": "CRITICAL",
+      "user": "user_198_51_100_25",
+      "source_ip": "198.51.100.25",
+      "destination_ip": "192.168.1.10",
+      "location": "External (198.51.100.25)",
+      "protocol": "SSH",
+      "anomaly_score": 0.771,
+      "ml_confidence": "77.1%",
+      "behavioral_anomalies": [
+        "External IP detected: External (198.51.100.25)",
+        "Multiple failed attempts: 10",
+        "Automated attack pattern: 0.6 minutes between attempts"
+      ],
+      "failed_attempts": 10,
+      "recommended_action": "Investigate immediately - possible account compromise"
+    },
+    {
+      "timestamp": "2025-12-05T11:39:32.033406",
+      "severity": "HIGH",
+      "user": "user_192_168_1_10",
+      "source_ip": "192.168.1.10",
+      "destination_ip": "198.51.100.25",
+      "location": "Internal Network",
+      "protocol": "SSH",
+      "anomaly_score": 0.607,
+      "ml_confidence": "60.7%",
+      "behavioral_anomalies": [
+        "Multiple failed attempts: 10",
+        "Automated attack pattern: 0.6 minutes between attempts"
+      ],
+      "failed_attempts": 10,
+      "recommended_action": "Investigate immediately - possible account compromise"
+    },
+    {
+      "timestamp": "2025-12-05T11:39:32.043406",
+      "severity": "CRITICAL",
+      "user": "user_198_51_100_25",
+      "source_ip": "198.51.100.25",
+      "destination_ip": "192.168.1.10",
+      "location": "External (198.51.100.25)",
+      "protocol": "SSH",
+      "anomaly_score": 0.771,
+      "ml_confidence": "77.1%",
+      "behavioral_anomalies": [
+        "External IP detected: External (198.51.100.25)",
+        "Multiple failed attempts: 10",
+        "Automated attack pattern: 0.6 minutes between attempts"
+      ],
+      "failed_attempts": 10,
+      "recommended_action": "Investigate immediately - possible account compromise"
+    },
+    {
+      "timestamp": "2025-12-05T11:39:34.033406",
+      "severity": "HIGH",
+      "user": "user_192_168_1_10",
+      "source_ip": "192.168.1.10",
+      "destination_ip": "198.51.100.25",
+      "location": "Internal Network",
+      "protocol": "SSH",
+      "anomaly_score": 0.607,
+      "ml_confidence": "60.7%",
+      "behavioral_anomalies": [
+        "Multiple failed attempts: 10",
+        "Automated attack pattern: 0.6 minutes between attempts"
+      ],
+      "failed_attempts": 10,
+      "recommended_action": "Investigate immediately - possible account compromise"
+    },
+    {
+      "timestamp": "2025-12-05T11:39:34.043406",
+      "severity": "CRITICAL",
+      "user": "user_198_51_100_25",
+      "source_ip": "198.51.100.25",
+      "destination_ip": "192.168.1.10",
+      "location": "External (198.51.100.25)",
+      "protocol": "SSH",
+      "anomaly_score": 0.771,
+      "ml_confidence": "77.1%",
+      "behavioral_anomalies": [
+        "External IP detected: External (198.51.100.25)",
+        "Multiple failed attempts: 10",
+        "Automated attack pattern: 0.6 minutes between attempts"
+      ],
+      "failed_attempts": 10,
+      "recommended_action": "Investigate immediately - possible account compromise"
+    },
+    {
+      "timestamp": "2025-12-07T11:09:06.083406",
+      "severity": "MEDIUM",
+      "user": "rdp_user_198_51_100_100",
+      "source_ip": "198.51.100.100",
+      "destination_ip": "192.168.1.20",
+      "location": "External (198.51.100.100)",
+      "protocol": "RDP",
+      "anomaly_score": 0.553,
+      "ml_confidence": "55.3%",
+      "behavioral_anomalies": [
+        "ML anomaly: 0.556 confidence",
+        "External IP detected: External (198.51.100.100)",
+        "Unknown user from external IP"
+      ],
+      "failed_attempts": 0,
+      "recommended_action": "Investigate immediately - possible account compromise"
+    }
+  ]
+}
