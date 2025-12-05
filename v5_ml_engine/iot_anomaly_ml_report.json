@@ -1,0 +1,116 @@
+{
+  "tool": "Healthcare IoT Anomaly Detector",
+  "version": "5.0",
+  "ml_algorithm": "Isolation Forest + Behavioral Profiling",
+  "scan_time": "2025-12-05T00:42:23.732731",
+  "baseline_events": 2718,
+  "devices_monitored": 23,
+  "total_alerts": 4,
+  "alerts": [
+    {
+      "timestamp": "2025-12-05T00:42:23.730519",
+      "severity": "HIGH",
+      "device_id": "MRI_Scanner_1",
+      "device_type": "MRI Scanner",
+      "device_ip": "10.103.184.110",
+      "category": "medical",
+      "anomaly_score": 0.669,
+      "ml_confidence": "66.9%",
+      "threat_type": "resource_abuse",
+      "attack_description": "Data Exfiltration - Patient imaging data stolen",
+      "behavioral_anomalies": [
+        "ML anomaly detection: 0.689 confidence",
+        "Bandwidth spike: 150.0 Mbps (normal: 3.3)",
+        "New protocols: {'HTTPS'}",
+        "New destinations: 2 IPs",
+        "High packet rate: 5000 pps"
+      ],
+      "recommended_action": "Isolate device from network, investigate compromise"
+    },
+    {
+      "timestamp": "2025-12-05T00:42:23.730530",
+      "severity": "HIGH",
+      "device_id": "Infusion_Pump_5",
+      "device_type": "Infusion Pump",
+      "device_ip": "10.46.27.250",
+      "category": "medical",
+      "anomaly_score": 0.523,
+      "ml_confidence": "52.3%",
+      "threat_type": "protocol_anomaly",
+      "attack_description": "Lateral Movement - Network reconnaissance",
+      "behavioral_anomalies": [
+        "ML anomaly detection: 0.597 confidence",
+        "Network scanning: 254 unique destinations",
+        "New protocols: {'SMB', 'TCP'}",
+        "New destinations: 155 IPs"
+      ],
+      "recommended_action": "Isolate device from network, investigate compromise"
+    },
+    {
+      "timestamp": "2025-12-05T00:42:23.730568",
+      "severity": "HIGH",
+      "device_id": "HVAC_Controller_1",
+      "device_type": "HVAC Controller",
+      "device_ip": "10.168.130.27",
+      "category": "building",
+      "anomaly_score": 0.544,
+      "ml_confidence": "54.4%",
+      "threat_type": "protocol_anomaly",
+      "attack_description": "C2 Communication - Botnet membership",
+      "behavioral_anomalies": [
+        "ML anomaly detection: 0.638 confidence",
+        "High external traffic: 100% of connections",
+        "New protocols: {'HTTPS'}",
+        "New destinations: 1 IPs"
+      ],
+      "recommended_action": "Isolate device from network, investigate compromise"
+    },
+    {
+      "timestamp": "2025-12-05T00:42:23.730577",
+      "severity": "HIGH",
+      "device_id": "Network_Printer_1",
+      "device_type": "Network Printer",
+      "device_ip": "10.228.208.174",
+      "category": "network",
+      "anomaly_score": 0.644,
+      "ml_confidence": "64.4%",
+      "threat_type": "resource_abuse",
+      "attack_description": "Crypto Mining - Unauthorized resource usage",
+      "behavioral_anomalies": [
+        "ML anomaly detection: 0.688 confidence",
+        "High external traffic: 100% of connections",
+        "New protocols: {'Stratum'}",
+        "New destinations: 2 IPs",
+        "High packet rate: 2500 pps"
+      ],
+      "recommended_action": "Isolate device from network, investigate compromise"
+    }
+  ],
+  "device_categories": {
+    "medical": 8,
+    "building": 5,
+    "clinical": 5,
+    "network": 5
+  },
+  "model_info": {
+    "algorithm": "Hybrid Isolation Forest",
+    "n_estimators": 100,
+    "features": [
+      "bandwidth_mbps",
+      "connections_per_hour",
+      "protocol_diversity",
+      "external_connections_pct",
+      "hour",
+      "day_of_week",
+      "packet_rate"
+    ],
+    "threat_types": [
+      "data_exfiltration",
+      "c2_communication",
+      "lateral_movement",
+      "firmware_tampering",
+      "resource_abuse",
+      "protocol_anomaly"
+    ]
+  }
+}

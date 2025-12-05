@@ -1,0 +1,106 @@
+{
+  "tool": "Network Traffic Anomaly Detector",
+  "version": "5.0",
+  "ml_algorithm": "Isolation Forest + Protocol Analysis",
+  "scan_time": "2025-12-05T01:34:17.680450",
+  "baseline_samples": 10149,
+  "hosts_monitored": 100,
+  "total_alerts": 4,
+  "alerts": [
+    {
+      "timestamp": "2025-12-05T01:34:17.678269",
+      "severity": "HIGH",
+      "src_ip": "10.1.152.210",
+      "anomaly_score": 0.629,
+      "ml_confidence": "62.9%",
+      "threat_type": "c2_communication",
+      "attack_description": "Data Exfiltration - Database dump uploaded to external server",
+      "bandwidth_in_mbps": 5.0,
+      "bandwidth_out_mbps": 500.0,
+      "connections_per_min": 10,
+      "behavioral_anomalies": [
+        "ML anomaly detection: 0.608 confidence",
+        "Massive outbound bandwidth: 500.0 Mbps (normal: 2.1)",
+        "Connection to known C2 server: 45.33.32.156"
+      ],
+      "recommended_action": "Block source IP, investigate compromised host"
+    },
+    {
+      "timestamp": "2025-12-05T01:34:17.678291",
+      "severity": "HIGH",
+      "src_ip": "10.1.171.229",
+      "anomaly_score": 0.65,
+      "ml_confidence": "65.0%",
+      "threat_type": "c2_communication",
+      "attack_description": "C2 Communication - Malware beacon detected",
+      "bandwidth_in_mbps": 0.1,
+      "bandwidth_out_mbps": 0.1,
+      "connections_per_min": 60,
+      "behavioral_anomalies": [
+        "ML anomaly detection: 0.599 confidence",
+        "Connection to known C2 server: 185.220.101.50",
+        "Suspicious port: 4444 (Metasploit)",
+        "Small packets with high frequency: 64 bytes (possible C2)"
+      ],
+      "recommended_action": "Block source IP, investigate compromised host"
+    },
+    {
+      "timestamp": "2025-12-05T01:34:17.678293",
+      "severity": "HIGH",
+      "src_ip": "10.1.166.207",
+      "anomaly_score": 0.554,
+      "ml_confidence": "55.4%",
+      "threat_type": "c2_communication",
+      "attack_description": "Port Scanning - Network reconnaissance",
+      "bandwidth_in_mbps": 1.0,
+      "bandwidth_out_mbps": 2.0,
+      "connections_per_min": 1000,
+      "behavioral_anomalies": [
+        "ML anomaly detection: 0.558 confidence",
+        "Port scanning detected: 656 unique ports",
+        "Connection spike: 1000 conn/min (normal: 35)",
+        "Small packets with high frequency: 60 bytes (possible C2)"
+      ],
+      "recommended_action": "Block source IP, investigate compromised host"
+    },
+    {
+      "timestamp": "2025-12-05T01:34:17.678353",
+      "severity": "HIGH",
+      "src_ip": "10.1.67.100",
+      "anomaly_score": 0.455,
+      "ml_confidence": "45.5%",
+      "threat_type": "malware_traffic",
+      "attack_description": "Crypto Mining - Unauthorized mining pool connection",
+      "bandwidth_in_mbps": 2.0,
+      "bandwidth_out_mbps": 1.0,
+      "connections_per_min": 100,
+      "behavioral_anomalies": [
+        "ML anomaly detection: 0.611 confidence",
+        "Suspicious port: 3333 (Stratum)",
+        "New protocols: {'Stratum'}"
+      ],
+      "recommended_action": "Block source IP, investigate compromised host"
+    }
+  ],
+  "model_info": {
+    "algorithm": "Hybrid Isolation Forest",
+    "n_estimators": 100,
+    "features": [
+      "bandwidth_in_mbps",
+      "bandwidth_out_mbps",
+      "connections_per_min",
+      "unique_destinations",
+      "port_diversity",
+      "avg_packet_size",
+      "external_ratio"
+    ],
+    "threat_types": [
+      "data_exfiltration",
+      "c2_communication",
+      "reconnaissance",
+      "malware_traffic",
+      "dns_tunneling",
+      "network_scanning"
+    ]
+  }
+}
