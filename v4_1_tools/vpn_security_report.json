@@ -1,0 +1,36 @@
+{
+  "alerts": [
+    {
+      "timestamp": "2025-12-04T15:37:23.537708",
+      "severity": "CRITICAL",
+      "category": "VPN/Remote Access",
+      "user": "dr.smith@hospital.local",
+      "ip": "185.220.101.50",
+      "location": "Russia",
+      "risk": "VPN connection from Tor/suspicious location"
+    },
+    {
+      "timestamp": "2025-12-04T15:37:23.537708",
+      "severity": "CRITICAL",
+      "category": "VPN/Remote Access",
+      "user": "nurse.jones@hospital.local",
+      "connections": 5,
+      "locations": [
+        "New York",
+        "London",
+        "Tokyo"
+      ],
+      "timeframe": "30 minutes",
+      "risk": "Impossible travel - account compromise"
+    },
+    {
+      "timestamp": "2025-12-04T15:37:23.537708",
+      "severity": "HIGH",
+      "category": "VPN/Remote Access",
+      "user": "admin@hospital.local",
+      "rdp_enabled": true,
+      "mfa": false,
+      "risk": "Admin RDP without MFA"
+    }
+  ]
+}

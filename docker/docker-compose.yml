@@ -1,0 +1,75 @@
+version: '3.8'
+
+services:
+  security-suite:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile
+      args:
+        GITHUB_REPO: https://github.com/jDrex82/security-suite.git
+        GITHUB_BRANCH: main
+    image: security-suite:v5.0
+    container_name: security-suite
+    hostname: security-suite
+    
+    # Privileged mode for tcpdump
+    privileged: true
+    network_mode: host
+    
+    # Volumes for persistent data
+    volumes:
+      - pcap_data:/var/lib/security_suite/pcap
+      - alert_data:/var/lib/security_suite/alerts
+      - model_data:/var/lib/security_suite/models
+      - log_data:/var/log/security_suite
+      - ./test_results:/tmp/test_results
+    
+    # Environment variables
+    environment:
+      - CAPTURE_INTERFACE=eth0
+      - ROTATION_INTERVAL=300
+      - PROCESSING_INTERVAL=60
+      - LOG_LEVEL=INFO
+    
+    # Health check
+    healthcheck:
+      test: ["CMD", "test", "-f", "/var/run/security_suite.pid"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 10s
+    
+    # Auto-restart
+    restart: unless-stopped
+    
+    # Resource limits
+    deploy:
+      resources:
+        limits:
+          cpus: '2.0'
+          memory: 1G
+        reservations:
+          cpus: '0.5'
+          memory: 256M
+    
+    # Command override options:
+    # Default: run tests
+    # command: /opt/security_suite/docker/run_tests.sh
+    
+    # Production: run orchestrator
+    # command: python3 /opt/security_suite/orchestrator/orchestrator_daemon.py
+    
+    # Interactive: bash shell
+    # command: /bin/bash
+    # stdin_open: true
+    # tty: true
+
+volumes:
+  pcap_data:
+    driver: local
+  alert_data:
+    driver: local
+  model_data:
+    driver: local
+  log_data:
+    driver: local

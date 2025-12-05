@@ -166,7 +166,7 @@ def generate_sample_pcap():
     """Generate sample PCAP file with various login attempts"""
     print("[*] Generating synthetic PCAP file...")
     
-    output_file = '/home/claude/security-suite/data_ingestion/sample_traffic.pcap'
+    output_file = 'sample_traffic.pcap'
     gen = PCAPGenerator(output_file)
     
     base_time = datetime.now() - timedelta(hours=1)

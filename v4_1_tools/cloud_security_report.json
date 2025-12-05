@@ -1,0 +1,40 @@
+{
+  "alerts": [
+    {
+      "timestamp": "2025-12-04T15:37:20.183647",
+      "severity": "CRITICAL",
+      "category": "Public S3 Bucket",
+      "bucket_name": "patient-records-backup",
+      "risk": "Public PHI data exposure - massive HIPAA violation",
+      "hipaa_violation": true,
+      "action": "Block public access immediately"
+    },
+    {
+      "timestamp": "2025-12-04T15:37:20.183647",
+      "severity": "HIGH",
+      "category": "IAM Security",
+      "user": "admin-user",
+      "mfa_enabled": false,
+      "permissions": [
+        "*:*"
+      ],
+      "risk": "Admin account without MFA"
+    },
+    {
+      "timestamp": "2025-12-04T15:37:20.183647",
+      "severity": "CRITICAL",
+      "category": "Insecure Security Group",
+      "security_group": "sg-web-servers",
+      "rule": "0.0.0.0/0:22",
+      "risk": "SSH open to internet"
+    },
+    {
+      "timestamp": "2025-12-04T15:37:20.183647",
+      "severity": "CRITICAL",
+      "category": "Insecure Security Group",
+      "security_group": "sg-database",
+      "rule": "0.0.0.0/0:3306",
+      "risk": "Database exposed to internet"
+    }
+  ]
+}

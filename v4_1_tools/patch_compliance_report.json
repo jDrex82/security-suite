@@ -1,0 +1,39 @@
+{
+  "scan_time": "2025-12-04T15:37:23.379540",
+  "total_alerts": 3,
+  "alerts": [
+    {
+      "timestamp": "2025-12-04T15:37:23.363894",
+      "severity": "HIGH",
+      "category": "Patch Deployment SLA Violation",
+      "patch": "Critical Security Update Q4-2024",
+      "days_overdue": 17,
+      "requirement": "30 days for critical patches",
+      "actual": "47 days"
+    },
+    {
+      "timestamp": "2025-12-04T15:37:23.363894",
+      "severity": "CRITICAL",
+      "category": "Vulnerable Software",
+      "software": "Apache Log4j",
+      "version": "2.14.1",
+      "cve": "CVE-2021-44228 (Log4Shell)",
+      "cvss_score": 10.0,
+      "active_exploitation": true
+    },
+    {
+      "timestamp": "2025-12-04T15:37:23.363894",
+      "severity": "HIGH",
+      "category": "Vulnerable Software",
+      "software": "OpenSSH",
+      "version": "7.4",
+      "cve": "CVE-2021-28041",
+      "cvss_score": 7.1,
+      "active_exploitation": false
+    }
+  ],
+  "summary": {
+    "critical": 1,
+    "high": 2
+  }
+}

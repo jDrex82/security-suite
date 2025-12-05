@@ -1,0 +1,29 @@
+[Unit]
+Description=Security Suite Orchestrator - ML-Powered Network Monitoring
+Documentation=https://github.com/jDrex82/security-suite
+After=network.target
+
+[Service]
+Type=simple
+User=root
+Group=root
+WorkingDirectory=/opt/security_suite/orchestrator
+ExecStart=/usr/bin/python3 /opt/security_suite/orchestrator/orchestrator_daemon.py
+Restart=always
+RestartSec=10
+StandardOutput=append:/var/log/security_suite/daemon.log
+StandardError=append:/var/log/security_suite/daemon.log
+
+# Resource limits
+LimitNOFILE=65535
+LimitNPROC=4096
+
+# Security hardening
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=true
+ReadWritePaths=/var/lib/security_suite /var/log/security_suite /var/run
+
+[Install]
+WantedBy=multi-user.target

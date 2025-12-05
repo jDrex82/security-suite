@@ -1,0 +1,31 @@
+{
+  "alerts": [
+    {
+      "timestamp": "2025-12-04T15:37:16.961383",
+      "severity": "HIGH",
+      "category": "API Security",
+      "api": "/api/v1/patients",
+      "method": "GET",
+      "ip": "203.0.113.50",
+      "requests_per_minute": 1000,
+      "issue": "Rate limit exceeded - possible scraping"
+    },
+    {
+      "timestamp": "2025-12-04T15:37:16.961383",
+      "severity": "CRITICAL",
+      "category": "API Security",
+      "api": "/api/v1/admin",
+      "auth": "None",
+      "issue": "Admin API endpoint without authentication"
+    },
+    {
+      "timestamp": "2025-12-04T15:37:16.961383",
+      "severity": "CRITICAL",
+      "category": "API Security",
+      "api": "/api/v1/records",
+      "sql_injection_attempt": true,
+      "payload": "' OR '1'='1",
+      "issue": "SQL injection attempt detected"
+    }
+  ]
+}

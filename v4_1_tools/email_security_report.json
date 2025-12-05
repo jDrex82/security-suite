@@ -1,0 +1,110 @@
+{
+  "scan_time": "2025-12-04T15:37:20.579921",
+  "total_alerts": 10,
+  "alerts": [
+    {
+      "timestamp": "2025-12-04T15:37:20.564254",
+      "severity": "CRITICAL",
+      "from": "admin@h0spital.local",
+      "to": "cfo@hospital.local",
+      "subject": "URGENT: Wire Transfer Required",
+      "threats": [
+        "Domain typosquatting detected",
+        "High phishing score (4 keywords)",
+        "SPF validation failed"
+      ],
+      "threat_count": 3
+    },
+    {
+      "timestamp": "2025-12-04T15:37:20.564254",
+      "severity": "HIGH",
+      "from": "it-support@hospital.tk",
+      "to": "staff@hospital.local",
+      "subject": "Password Expiration Notice",
+      "threats": [
+        "Suspicious TLD in sender domain",
+        "Suspicious link detected: http://phishing-site.tk"
+      ],
+      "threat_count": 2
+    },
+    {
+      "timestamp": "2025-12-04T15:37:20.564254",
+      "severity": "CRITICAL",
+      "from": "ceo@external-domain.com",
+      "to": "finance@hospital.local",
+      "subject": "Re: Confidential Payment",
+      "threats": [
+        "SPF validation failed",
+        "DMARC validation failed",
+        "Possible Business Email Compromise (BEC)"
+      ],
+      "threat_count": 3
+    },
+    {
+      "timestamp": "2025-12-04T15:37:20.564254",
+      "severity": "HIGH",
+      "from": "vendor@legitimate-vendor.com",
+      "to": "ap@hospital.local",
+      "subject": "Invoice #12345",
+      "threats": [
+        "Dangerous attachment type: invoice_12345.exe"
+      ],
+      "threat_count": 1
+    },
+    {
+      "timestamp": "2025-12-04T15:37:20.564254",
+      "severity": "CRITICAL",
+      "from": "user@hospital.local",
+      "to": "external-recipient@gmail.com",
+      "subject": "Patient Records Export",
+      "threats": [
+        "Possible data exfiltration (large external email)"
+      ],
+      "threat_count": 1
+    },
+    {
+      "timestamp": "2025-12-04T15:37:20.564254",
+      "severity": "HIGH",
+      "category": "Configuration",
+      "issue": "Missing SPF record",
+      "recommendation": "Configure SPF to prevent email spoofing"
+    },
+    {
+      "timestamp": "2025-12-04T15:37:20.564254",
+      "severity": "HIGH",
+      "category": "Configuration",
+      "issue": "Missing DMARC record",
+      "recommendation": "Configure DMARC for email authentication"
+    },
+    {
+      "timestamp": "2025-12-04T15:37:20.564254",
+      "severity": "CRITICAL",
+      "category": "Malicious Attachment",
+      "filename": "invoice_payment.exe",
+      "sender": "accounts@suspicious-vendor.com",
+      "reason": "Executable file from external sender"
+    },
+    {
+      "timestamp": "2025-12-04T15:37:20.564254",
+      "severity": "HIGH",
+      "category": "Malicious Attachment",
+      "filename": "document.docm",
+      "sender": "unknown@external.com",
+      "reason": "Macro-enabled Office document"
+    },
+    {
+      "timestamp": "2025-12-04T15:37:20.564254",
+      "severity": "HIGH",
+      "category": "Malicious Attachment",
+      "filename": "urgent.zip",
+      "sender": "admin@phishing.tk",
+      "reason": "Compressed file from suspicious domain"
+    }
+  ],
+  "summary": {
+    "critical": 4,
+    "high": 6,
+    "medium": 0,
+    "low": 0
+  }
+}

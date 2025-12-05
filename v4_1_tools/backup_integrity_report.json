@@ -1,0 +1,167 @@
+{
+  "scan_time": "2025-12-04T15:37:19.976050",
+  "total_alerts": 18,
+  "alerts": [
+    {
+      "timestamp": "2025-12-04T15:37:19.962906",
+      "severity": "CRITICAL",
+      "category": "Backup Issue",
+      "backup_name": "database_backup_2024_11_15.sql.gz",
+      "size_bytes": 0,
+      "age_days": 2,
+      "issue": "Zero-size backup - backup job likely failed"
+    },
+    {
+      "timestamp": "2025-12-04T15:37:19.962906",
+      "severity": "HIGH",
+      "category": "Backup Issue",
+      "backup_name": "ehr_backup_2024_11_20.tar.gz",
+      "size_bytes": 5368709120,
+      "age_days": 15,
+      "issue": "Backup is 15 days old - exceeds 7-day retention policy"
+    },
+    {
+      "timestamp": "2025-12-04T15:37:19.962906",
+      "severity": "HIGH",
+      "category": "Backup Issue",
+      "backup_name": "patient_records_2024_12_01.bak",
+      "size_bytes": 512,
+      "age_days": 3,
+      "issue": "Backup file suspiciously small (512 bytes)"
+    },
+    {
+      "timestamp": "2025-12-04T15:37:19.962906",
+      "severity": "CRITICAL",
+      "category": "Backup Issue",
+      "backup_name": "pacs_images_backup.ENCRYPTED",
+      "size_bytes": 10737418240,
+      "age_days": 1,
+      "issue": "Backup file has ransomware extension (.ENCRYPTED)"
+    },
+    {
+      "timestamp": "2025-12-04T15:37:19.962906",
+      "severity": "CRITICAL",
+      "category": "Backup Issue",
+      "backup_name": "vss_shadow_copy_deleted.log",
+      "size_bytes": 1024,
+      "age_days": 0,
+      "issue": "Volume Shadow Copy service deletion detected - ransomware indicator"
+    },
+    {
+      "timestamp": "2025-12-04T15:37:19.962906",
+      "severity": "HIGH",
+      "category": "Encryption Violation",
+      "backup": "database_backup_2024_12_04.sql",
+      "encrypted": false,
+      "issue": "Unencrypted database backup contains PHI",
+      "hipaa_risk": true
+    },
+    {
+      "timestamp": "2025-12-04T15:37:19.962906",
+      "severity": "CRITICAL",
+      "category": "Encryption Violation",
+      "backup": "patient_export_2024_12_03.csv",
+      "encrypted": false,
+      "issue": "Unencrypted patient data export - HIPAA violation",
+      "hipaa_risk": true
+    },
+    {
+      "timestamp": "2025-12-04T15:37:19.962906",
+      "severity": "CRITICAL",
+      "category": "Ransomware Indicator",
+      "indicator": "Volume Shadow Copy Service disabled",
+      "description": "VSS service stopped - prevents Windows restore points",
+      "action_required": "IMMEDIATE - Possible active ransomware attack"
+    },
+    {
+      "timestamp": "2025-12-04T15:37:19.962906",
+      "severity": "CRITICAL",
+      "category": "Ransomware Indicator",
+      "indicator": "Backup deletion spike detected",
+      "description": "47 backup files deleted in last hour",
+      "action_required": "IMMEDIATE - Possible active ransomware attack"
+    },
+    {
+      "timestamp": "2025-12-04T15:37:19.962906",
+      "severity": "CRITICAL",
+      "category": "Ransomware Indicator",
+      "indicator": "Backup files renamed with ransomware extensions",
+      "description": "Files renamed: .encrypted, .locked, .crypted",
+      "action_required": "IMMEDIATE - Possible active ransomware attack"
+    },
+    {
+      "timestamp": "2025-12-04T15:37:19.962906",
+      "severity": "HIGH",
+      "category": "Ransomware Indicator",
+      "indicator": "Backup service stopped unexpectedly",
+      "description": "Windows Backup service terminated abnormally",
+      "action_required": "IMMEDIATE - Possible active ransomware attack"
+    },
+    {
+      "timestamp": "2025-12-04T15:37:19.962906",
+      "severity": "CRITICAL",
+      "category": "Backup Corruption",
+      "backup": "database_backup_2024_12_03.sql.gz",
+      "expected_hash": "789ghi012jkl...",
+      "actual_hash": "DIFFERENT_HASH",
+      "issue": "Backup file integrity check failed - file may be corrupted"
+    },
+    {
+      "timestamp": "2025-12-04T15:37:19.962906",
+      "severity": "CRITICAL",
+      "category": "Restore Failure",
+      "backup": "corrupted_backup.tar.gz",
+      "error": "Archive integrity error - cannot extract",
+      "issue": "Backup restore test failed - backup may be unusable"
+    },
+    {
+      "timestamp": "2025-12-04T15:37:19.962906",
+      "severity": "CRITICAL",
+      "category": "Restore Failure",
+      "backup": "encrypted_backup_missing_key.bak",
+      "error": "Decryption key not found",
+      "issue": "Backup restore test failed - backup may be unusable"
+    },
+    {
+      "timestamp": "2025-12-04T15:37:19.962906",
+      "severity": "HIGH",
+      "category": "Retention Policy Violation",
+      "data_type": "Patient Medical Records",
+      "required_years": 6,
+      "current_years": 3,
+      "compliance_standard": "HIPAA",
+      "issue": "Backup retention below HIPAA requirements"
+    },
+    {
+      "timestamp": "2025-12-04T15:37:19.962906",
+      "severity": "HIGH",
+      "category": "Retention Policy Violation",
+      "data_type": "Financial Records",
+      "required_years": 7,
+      "current_years": 5,
+      "compliance_standard": "IRS/HIPAA",
+      "issue": "Backup retention below IRS/HIPAA requirements"
+    },
+    {
+      "timestamp": "2025-12-04T15:37:19.962906",
+      "severity": "HIGH",
+      "category": "Configuration Issue",
+      "issue": "No offsite backup configured",
+      "risk": "Site disaster will result in total data loss",
+      "recommendation": "Implement offsite or cloud backup immediately"
+    },
+    {
+      "timestamp": "2025-12-04T15:37:19.962906",
+      "severity": "MEDIUM",
+      "category": "Best Practice Violation",
+      "issue": "3-2-1 backup rule not followed",
+      "recommendation": "3 copies, 2 media types, 1 offsite location"
+    }
+  ],
+  "summary": {
+    "critical": 10,
+    "high": 7,
+    "medium": 1,
+    "low": 0
+  }
+}

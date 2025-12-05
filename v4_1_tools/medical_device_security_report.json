@@ -1,0 +1,212 @@
+{
+  "scan_time": "2025-12-04T15:37:20.785312",
+  "devices_scanned": 4,
+  "total_alerts": 16,
+  "devices": [
+    {
+      "name": "GE Ultrasound US-2024",
+      "ip": "10.20.30.100",
+      "mac": "00:11:22:33:44:55",
+      "type": "Diagnostic Imaging",
+      "manufacturer": "GE Healthcare",
+      "firmware": "2.1.4",
+      "last_seen": "2025-12-04T15:37:20.785312",
+      "vlan": "GENERAL_NETWORK",
+      "criticality": "HIGH"
+    },
+    {
+      "name": "Philips MRI Scanner MX450",
+      "ip": "10.20.30.105",
+      "mac": "00:AA:BB:CC:DD:EE",
+      "type": "Diagnostic Imaging",
+      "manufacturer": "Philips",
+      "firmware": "5.2.1",
+      "last_seen": "2025-12-04T15:37:20.785312",
+      "vlan": "MEDICAL_DEVICES",
+      "criticality": "CRITICAL"
+    },
+    {
+      "name": "Infusion Pump IP-7000",
+      "ip": "10.20.30.110",
+      "mac": "00:11:AA:BB:CC:DD",
+      "type": "Patient Monitoring",
+      "manufacturer": "Baxter",
+      "firmware": "1.8.2",
+      "last_seen": "2025-12-04T15:37:20.785312",
+      "vlan": "MEDICAL_DEVICES",
+      "criticality": "CRITICAL",
+      "fda_recall": true
+    },
+    {
+      "name": "ECG Monitor CardioMX",
+      "ip": "10.20.30.120",
+      "mac": "00:22:33:44:55:66",
+      "type": "Patient Monitoring",
+      "manufacturer": "Unknown",
+      "firmware": "Unknown",
+      "last_seen": "2025-12-04T15:37:20.785312",
+      "vlan": "GENERAL_NETWORK",
+      "criticality": "HIGH",
+      "unmanaged": true
+    }
+  ],
+  "alerts": [
+    {
+      "timestamp": "2025-12-04T15:37:20.785312",
+      "severity": "CRITICAL",
+      "category": "Network Isolation Violation",
+      "device": "GE Ultrasound US-2024",
+      "ip": "10.20.30.100",
+      "current_vlan": "GENERAL_NETWORK",
+      "required_vlan": "MEDICAL_DEVICES",
+      "risk": "Medical device on general network - ransomware propagation risk",
+      "hipaa_impact": true
+    },
+    {
+      "timestamp": "2025-12-04T15:37:20.785312",
+      "severity": "HIGH",
+      "category": "Vulnerable Medical Device Firmware",
+      "device": "GE Ultrasound US-2024",
+      "current_firmware": "2.1.4",
+      "patched_firmware": "2.2.0",
+      "cve": "CVE-2023-12345",
+      "vulnerability": "Authentication bypass vulnerability",
+      "patient_safety_risk": true
+    },
+    {
+      "timestamp": "2025-12-04T15:37:20.785312",
+      "severity": "CRITICAL",
+      "category": "Vulnerable Medical Device Firmware",
+      "device": "Infusion Pump IP-7000",
+      "current_firmware": "1.8.2",
+      "patched_firmware": "1.9.0",
+      "cve": "CVE-2023-67890",
+      "vulnerability": "Remote code execution - can modify drug dosages",
+      "patient_safety_risk": true
+    },
+    {
+      "timestamp": "2025-12-04T15:37:20.785312",
+      "severity": "CRITICAL",
+      "category": "FDA Recall",
+      "device": "Infusion Pump IP-7000",
+      "manufacturer": "Baxter",
+      "model": "Infusion Pump IP-7000",
+      "risk": "Device subject to FDA recall - immediate action required",
+      "action": "Contact manufacturer for recall remediation"
+    },
+    {
+      "timestamp": "2025-12-04T15:37:20.785312",
+      "severity": "CRITICAL",
+      "category": "Network Isolation Violation",
+      "device": "ECG Monitor CardioMX",
+      "ip": "10.20.30.120",
+      "current_vlan": "GENERAL_NETWORK",
+      "required_vlan": "MEDICAL_DEVICES",
+      "risk": "Medical device on general network - ransomware propagation risk",
+      "hipaa_impact": true
+    },
+    {
+      "timestamp": "2025-12-04T15:37:20.785312",
+      "severity": "HIGH",
+      "category": "Unmanaged Medical Device",
+      "device": "ECG Monitor CardioMX",
+      "ip": "10.20.30.120",
+      "risk": "Device not in asset management system",
+      "recommendation": "Add to medical device inventory and MDM"
+    },
+    {
+      "timestamp": "2025-12-04T15:37:20.785312",
+      "severity": "CRITICAL",
+      "category": "DICOM Traffic Anomaly",
+      "source_ip": "10.20.30.200",
+      "dest_ip": "192.168.100.50",
+      "port": 104,
+      "protocol": "DICOM",
+      "issue": "DICOM traffic to external IP - possible PHI exfiltration",
+      "images_transferred": 150
+    },
+    {
+      "timestamp": "2025-12-04T15:37:20.785312",
+      "severity": "HIGH",
+      "category": "DICOM Traffic Anomaly",
+      "source_ip": "10.20.30.100",
+      "dest_ip": "10.20.30.105",
+      "port": 104,
+      "protocol": "DICOM",
+      "encryption": false,
+      "issue": "Unencrypted DICOM traffic - HIPAA violation"
+    },
+    {
+      "timestamp": "2025-12-04T15:37:20.785312",
+      "severity": "HIGH",
+      "category": "DICOM Traffic Anomaly",
+      "source_ip": "Unknown",
+      "dest_ip": "10.20.30.105",
+      "port": 104,
+      "failed_auth_attempts": 47,
+      "issue": "Multiple failed DICOM authentication attempts"
+    },
+    {
+      "timestamp": "2025-12-04T15:37:20.785312",
+      "severity": "CRITICAL",
+      "category": "Device Authentication Issue",
+      "device": "GE Ultrasound US-2024",
+      "issue": "Default credentials in use",
+      "username": "admin",
+      "password": "admin",
+      "risk": "Unauthorized access to medical device"
+    },
+    {
+      "timestamp": "2025-12-04T15:37:20.785312",
+      "severity": "CRITICAL",
+      "category": "Device Authentication Issue",
+      "device": "Infusion Pump IP-7000",
+      "issue": "No authentication required",
+      "risk": "Anyone can modify pump settings - patient safety risk"
+    },
+    {
+      "timestamp": "2025-12-04T15:37:20.785312",
+      "severity": "HIGH",
+      "category": "Device Authentication Issue",
+      "device": "ECG Monitor CardioMX",
+      "issue": "Weak password policy",
+      "min_length": 4,
+      "risk": "Easy to brute force"
+    },
+    {
+      "timestamp": "2025-12-04T15:37:20.785312",
+      "severity": "HIGH",
+      "category": "FDA Guidance Non-Compliance",
+      "requirement": "Device asset inventory",
+      "status": "FAIL",
+      "devices_missing": 3
+    },
+    {
+      "timestamp": "2025-12-04T15:37:20.785312",
+      "severity": "CRITICAL",
+      "category": "FDA Guidance Non-Compliance",
+      "requirement": "Network segmentation (FDA guidance)",
+      "status": "FAIL",
+      "devices_on_general_network": 2
+    },
+    {
+      "timestamp": "2025-12-04T15:37:20.785312",
+      "severity": "HIGH",
+      "category": "FDA Guidance Non-Compliance",
+      "requirement": "Vulnerability management program",
+      "status": "PARTIAL",
+      "unpatched_devices": 4
+    },
+    {
+      "timestamp": "2025-12-04T15:37:20.785312",
+      "severity": "MEDIUM",
+      "category": "FDA Guidance Non-Compliance",
+      "requirement": "Incident response plan for devices",
+      "status": "FAIL"
+    }
+  ],
+  "summary": {
+    "critical": 8,
+    "high": 7
+  }
+}
